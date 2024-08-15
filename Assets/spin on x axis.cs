@@ -13,6 +13,6 @@ public class spinonxaxis : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0f, 10 * Time.deltaTime, 0f, Space.Self); 
+        transform.Rotate(0f, 50 * Time.deltaTime, 0f, Space.Self); 
     }
 }
