@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     {
         velocity = new Vector2(speed, speed);
         characterBody = GetComponent<Rigidbody2D>();
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
