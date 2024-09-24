@@ -9,13 +9,15 @@ public class npc2 : MonoBehaviour
     public TextMeshProUGUI dialogueText; // Use TextMeshProUGUI for UI text
     public string[] dialogue;
     private int index;
+    private int brainDamage;
+    public string batteryText;
 
     public float worldSpeed;
     public bool playerIsClose;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
+        if (Input.GetKeyDown(KeyCode.E) && playerIsClose && brainDamage < 20)
         {
             if (dialoguePanel.activeInHierarchy)
             {
@@ -26,6 +28,18 @@ public class npc2 : MonoBehaviour
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
+
+            brainDamage++;
+        }
+        if (brainDamage >= 20 && playerIsClose)
+        {
+            StopAllCoroutines();
+            dialogueText.text = batteryText;
+            dialoguePanel.SetActive(true);
+        }
+        if (playerIsClose == false)
+        {
+            dialoguePanel.SetActive(false);
         }
     }
 
@@ -43,6 +57,8 @@ public class npc2 : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSeconds(worldSpeed);
         }
+        yield return new WaitForSeconds(2);
+        NextLine();
     }
 
     public void NextLine()
@@ -63,8 +79,15 @@ public class npc2 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerIsClose = false;
+            playerIsClose = true;
             zeroText();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerIsClose = false;
         }
     }
 }
