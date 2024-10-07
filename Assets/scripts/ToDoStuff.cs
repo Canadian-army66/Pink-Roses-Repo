@@ -18,22 +18,13 @@ public class ToDoStuff : MonoBehaviour
             {
                 mAnimator.SetTrigger("ToKick");
             }
-
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W))
             {
                 mAnimator.SetTrigger("ToWalk");
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            else if(mAnimator.GetBool("ToIdle") == false)
             {
-                mAnimator.SetTrigger("ToWalk");
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                mAnimator.SetTrigger("ToWalk");
-            }
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                mAnimator.SetTrigger("ToWalk");
+                mAnimator.SetBool("ToIdle", true);
             }
         }
     }
