@@ -18,7 +18,7 @@ public class ToDoStuff : MonoBehaviour
             {
                 mAnimator.SetTrigger("ToKick");
             }
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W))
             {
                 mAnimator.SetTrigger("ToWalk");
             }
