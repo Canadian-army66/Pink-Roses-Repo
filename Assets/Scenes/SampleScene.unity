@@ -1185,7 +1185,7 @@ MonoBehaviour:
   - Hello
   - Your hot
   batteryText: STOP IT!!!!!
-  worldSpeed: 0.2
+  worldSpeed: -0.68
   playerIsClose: 0
 --- !u!95 &892719153
 Animator:
