@@ -82,9 +82,13 @@ public class npc2 : MonoBehaviour
             playerIsClose = true;
             zeroText();
         }
-        else
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
         {
             playerIsClose = false;
+            zeroText();
         }
     }
 }
