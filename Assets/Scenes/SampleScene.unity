@@ -1184,7 +1184,7 @@ MonoBehaviour:
   dialogue:
   - Hello
   - Your hot
-  batteryText: STOP IT!!!!!
+  deathImg: {fileID: 21300000, guid: 0b7860743139b2740b57bdd05a4ac993, type: 3}
   worldSpeed: -0.68
   playerIsClose: 0
 --- !u!95 &892719153

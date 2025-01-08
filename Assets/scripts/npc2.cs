@@ -3,17 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // Import TextMeshPro namespace
 
-public class npc2 : MonoBehaviour
+public class NPC2 : MonoBehaviour
 {
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText; // Use TextMeshProUGUI for UI text
     public string[] dialogue;
+    public Sprite deathImg;
     private int index;
+    private Animator mAnimator;
     private int brainDamage;
-    public string batteryText;
 
     public float worldSpeed;
     public bool playerIsClose;
+
+    void Start()
+    {
+        mAnimator = GetComponent<Animator>();
+        mAnimator.SetBool("isDead", false);
+    }
 
     void Update()
     {
@@ -21,7 +28,7 @@ public class npc2 : MonoBehaviour
         {
             if (dialoguePanel.activeInHierarchy)
             {
-                zeroText();
+                ZeroText();
             }
             else
             {
@@ -34,16 +41,14 @@ public class npc2 : MonoBehaviour
         if (brainDamage >= 20 && playerIsClose)
         {
             StopAllCoroutines();
-            dialogueText.text = batteryText;
-            dialoguePanel.SetActive(true);
-        }
-        if (playerIsClose == false)
-        {
             dialoguePanel.SetActive(false);
+            mAnimator.SetBool("isDead", true);
+            transform.localScale = new Vector3(0.11f, 0.11f, 1f);
         }
+
     }
 
-    public void zeroText()
+    public void ZeroText()
     {
         dialogueText.text = "";
         index = 0;
@@ -71,7 +76,7 @@ public class npc2 : MonoBehaviour
         }
         else
         {
-            zeroText();
+            ZeroText();
         }
     }
 
@@ -80,7 +85,7 @@ public class npc2 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = true;
-            zeroText();
+            ZeroText();
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -88,7 +93,7 @@ public class npc2 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
-            zeroText();
+            ZeroText();
         }
     }
 }

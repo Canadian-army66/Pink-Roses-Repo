@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class changestance : MonoBehaviour
+public class Changestance : MonoBehaviour
 {
     private Animator mAnimator;
     public GameObject dialoguePanel;

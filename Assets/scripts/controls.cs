@@ -4,7 +4,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static UnityEngine.Tilemaps.Tilemap;
 
-public class controls : MonoBehaviour
+public class Controls : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
