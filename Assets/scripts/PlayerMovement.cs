@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public int speed = 1;
+    private Animator mAnimator;
     private Rigidbody2D characterBody;
     private Vector2 velocity;
     private Vector2 inputMovement;
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
         velocity = new Vector2(speed, speed);
         characterBody = GetComponent<Rigidbody2D>();
         Cursor.visible = false;
+        mAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,6 +40,32 @@ public class PlayerMovement : MonoBehaviour
         else if (transform.position.x > bound.maxX)
         {
             transform.position = new Vector3(bound.maxX, transform.position.y, 0);
+        }
+
+        if (mAnimator != null)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                mAnimator.SetTrigger("ToKick");
+            }
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W))
+            {
+                mAnimator.SetTrigger("ToWalk");
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                mAnimator.SetTrigger("ToWalk");
+                transform.localScale = new Vector3(-6, 6, 1);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                mAnimator.SetTrigger("ToWalk");
+                transform.localScale = new Vector3(6, 6, 1);
+            }
+            else if (mAnimator.GetBool("ToIdle") == false)
+            {
+                mAnimator.SetBool("ToIdle", true);
+            }
         }
     }
     private void FixedUpdate()

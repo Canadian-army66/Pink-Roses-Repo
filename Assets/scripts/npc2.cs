@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // Import TextMeshPro namespace
+using TMPro;
 
 public class NPC2 : MonoBehaviour
 {
     public GameObject dialoguePanel;
-    public TextMeshProUGUI dialogueText; // Use TextMeshProUGUI for UI text
+    public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     public Sprite deathImg;
     private int index;
@@ -46,6 +46,17 @@ public class NPC2 : MonoBehaviour
             transform.localScale = new Vector3(0.11f, 0.11f, 1f);
         }
 
+        if (mAnimator != null)
+        {
+            if (dialoguePanel.activeInHierarchy)
+            {
+                mAnimator.SetBool("isTalking", true);
+            }
+            else
+            {
+                mAnimator.SetBool("isTalking", false);
+            }
+        }
     }
 
     public void ZeroText()
