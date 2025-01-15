@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 velocity;
     private Vector2 inputMovement;
     public BoundrySetter bound;
+    public Vector3 PostScale;
+    public Vector3 PreScale;
     void Start()
     {
         velocity = new Vector2(speed, speed);
@@ -55,12 +57,12 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.D))
             {
                 mAnimator.SetTrigger("ToWalk");
-                transform.localScale = new Vector3(-6, 6, 1);
+                transform.localScale = PreScale;
             }
             if (Input.GetKey(KeyCode.A))
             {
                 mAnimator.SetTrigger("ToWalk");
-                transform.localScale = new Vector3(6, 6, 1);
+                transform.localScale = PostScale;
             }
             else if (mAnimator.GetBool("ToIdle") == false)
             {
