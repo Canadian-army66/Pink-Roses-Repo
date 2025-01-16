@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YourHouse.unity
     guid: 304510a9ec899204d8c67bb42e3262a0
+  - enabled: 1
+    path: Assets/Scenes/Seaside.unity
+    guid: 66d57c6e5320c58468cc7830e158ba13
   m_configObjects: {}
