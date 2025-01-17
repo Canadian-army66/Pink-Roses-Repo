@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6251899e53bd75c4a92800a47cdaeb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsChanging: 0
   sceneBuildIndex: 2
 --- !u!1 &76837297
 GameObject:
@@ -738,6 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6251899e53bd75c4a92800a47cdaeb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsChanging: 0
   sceneBuildIndex: 1
 --- !u!212 &614153689
 SpriteRenderer:
@@ -1142,6 +1144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6251899e53bd75c4a92800a47cdaeb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsChanging: 0
   sceneBuildIndex: 3
 --- !u!61 &744408877
 BoxCollider2D:
@@ -1969,7 +1972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ConfineMode: 0
   m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 0}
+  m_BoundingShape2D: {fileID: 975115305}
   m_ConfineScreenEdges: 1
   m_Damping: 0
 --- !u!1 &1484430768
