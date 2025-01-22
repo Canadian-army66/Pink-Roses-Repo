@@ -42,6 +42,12 @@ public class AudioManager : MonoBehaviour
     {
         masterMixer.SetFloat("MasterVol", soundLevel);
         PreferencesManager.SetMainVol(soundLevel);
+
+        if (MasterSlider != null)
+            PreferencesManager.GetMainVol();
+
+        if (MusicSlider != null)
+            PreferencesManager.GetMusicVol();
     }
     public void ChaneMusicVol(float soundLevel)
     {
