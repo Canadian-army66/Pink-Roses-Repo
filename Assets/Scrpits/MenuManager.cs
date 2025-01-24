@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public AudioMixer masterMixer;
+    public float ChangeSoundVolume;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
