@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour
 
     public AudioMixer masterMixer;
 
+    public float soundLevel;
+
+
     public Slider MasterSlider, MusicSlider;
     public static AudioManager Instance { get { return instance; } }
 
@@ -37,6 +40,9 @@ public class AudioManager : MonoBehaviour
             PreferencesManager.GetMainVol();
         if (MusicSlider != null)
             PreferencesManager.GetMusicVol();
+
+        masterMixer.SetFloat("MasterVol", PreferencesManager.GetMainVol());
+        masterMixer.SetFloat("MusicVol", PreferencesManager.GetMusicVol());
     }
     public void ChaneMainVol(float soundLevel)
     {
@@ -50,6 +56,18 @@ public class AudioManager : MonoBehaviour
             PreferencesManager.GetMusicVol();
     }
     public void ChaneMusicVol(float soundLevel)
+    {
+        masterMixer.SetFloat("MusicVol", soundLevel);
+        PreferencesManager.SetMusicVol(soundLevel);
+    }
+
+    public void ChangeSoundVol(float soundLevel)
+    {
+        masterMixer.SetFloat("MasterVol", soundLevel);
+        PreferencesManager.SetMainVol(soundLevel);
+    }
+
+    public void ChangeMusicVol(float soundLevel)
     {
         masterMixer.SetFloat("MusicVol", soundLevel);
         PreferencesManager.SetMusicVol(soundLevel);

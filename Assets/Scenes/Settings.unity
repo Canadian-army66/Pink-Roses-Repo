@@ -2073,6 +2073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterMixer: {fileID: 24100000, guid: dc6ec68286d3703438f190134755138a, type: 2}
+  soundLevel: 0
   MasterSlider: {fileID: 1034471153}
   MusicSlider: {fileID: 629798334}
 --- !u!1 &1034471151
@@ -3431,6 +3432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aaf0ae9f39f06b41b499f7d471e1391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicSlider: {fileID: 629798334}
+  masterSlider: {fileID: 1034471153}
 --- !u!1 &1984475654
 GameObject:
   m_ObjectHideFlags: 0
