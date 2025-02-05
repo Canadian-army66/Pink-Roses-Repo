@@ -16,10 +16,10 @@ public static class PreferencesManager
 
     public static void SetMusicVol(float soundLevel)
     {
-        PlayerPrefs.SetFloat("MainVolume", soundLevel);
+        PlayerPrefs.SetFloat("MusicVolume", soundLevel);
     }
     public static void SetMainVol(float soundLevel)
     {
-        PlayerPrefs.SetFloat("MusicVolume", soundLevel);
+        PlayerPrefs.SetFloat("MainVolume", soundLevel);
     }
 }

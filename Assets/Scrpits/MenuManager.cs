@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-using UnityEngine.Audio;
 
 public class MenuManager : MonoBehaviour
 {
@@ -13,12 +12,12 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        if (masterSlider != null && masterSlider.gameObject.activeInHierarchy)
+        if (masterSlider != null)
         {
             masterSlider.value = PreferencesManager.GetMainVol();
         }
 
-        if (musicSlider != null && musicSlider.gameObject.activeInHierarchy)
+        if (musicSlider != null)
         {
             musicSlider.value = PreferencesManager.GetMusicVol();
         }
