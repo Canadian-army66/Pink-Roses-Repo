@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,12 +13,15 @@ public class PlayerMovement : MonoBehaviour
     public BoundrySetter bound;
     public Vector3 PostScale;
     public Vector3 PreScale;
+    public AudioClip kickSound;
+    private AudioSource audioSource;
     void Start()
     {
         velocity = new Vector2(speed, speed);
         characterBody = GetComponent<Rigidbody2D>();
         Cursor.visible = false;
         mAnimator = GetComponent<Animator>();
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                audioSource.Play();
                 mAnimator.SetTrigger("ToKick");
             }
             if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W))

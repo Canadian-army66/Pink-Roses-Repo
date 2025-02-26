@@ -152,6 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 892719150}
+  - {fileID: 296930670}
   m_Father: {fileID: 1419818793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &29330415
@@ -984,7 +985,7 @@ Transform:
   m_GameObject: {fileID: 191218816}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 7.010126, y: 2.5916271, z: -0.4134211}
+  m_LocalPosition: {x: 7.26, y: 2.6, z: -0.4134211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1016,7 +1017,7 @@ Transform:
   m_GameObject: {fileID: 209826452}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1498739, y: -4.42, z: -0.4134211}
+  m_LocalPosition: {x: -1.14, y: -4.42, z: -0.4134211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1365,6 +1366,7 @@ GameObject:
   - component: {fileID: 296930669}
   - component: {fileID: 296930668}
   - component: {fileID: 296930671}
+  - component: {fileID: 296930672}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -1447,12 +1449,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296930667}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.46, y: 2.66, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.2964745, y: 5.297914, z: -3.069724}
   m_LocalScale: {x: 0.195, y: 0.195, z: 0.195}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 264367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &296930671
 Animator:
@@ -1475,6 +1477,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &296930672
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296930667}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 7.68}
+    newSize: {x: 5.12, y: 7.68}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.12, y: 7.68}
+  m_EdgeRadius: 0
 --- !u!1 &318988693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,6 +2080,7 @@ MonoBehaviour:
   bound: {fileID: 2123190355}
   PostScale: {x: 0.2, y: 0.19, z: 0}
   PreScale: {x: -0.2, y: 0.19, z: 0}
+  kickSound: {fileID: 8300000, guid: 959b6eaf57bd9d74fafc37779dec374d, type: 3}
 --- !u!212 &667411731
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2735,7 +2783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -519, y: 297}
+  m_AnchoredPosition: {x: -798, y: 426}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871653259
@@ -6122,7 +6170,7 @@ Transform:
   m_GameObject: {fileID: 1912644950}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1498739, y: 5.859, z: -0.4134211}
+  m_LocalPosition: {x: -1.14, y: 5.5, z: -0.4134211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6646,7 +6694,7 @@ Transform:
   m_GameObject: {fileID: 2104646402}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -9.314, y: 2.5916271, z: -0.4134211}
+  m_LocalPosition: {x: -9.44, y: 2.59, z: -0.4134211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6918,4 +6966,3 @@ SceneRoots:
   - {fileID: 1990420044}
   - {fileID: 692795224}
   - {fileID: 1528046974}
-  - {fileID: 296930670}
