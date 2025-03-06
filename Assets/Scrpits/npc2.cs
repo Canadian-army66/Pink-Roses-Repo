@@ -107,4 +107,9 @@ public class NPC2 : MonoBehaviour
             ZeroText();
         }
     }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.forward * 500);
+    }
 }
