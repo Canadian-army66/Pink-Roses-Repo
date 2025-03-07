@@ -81,4 +81,9 @@ public class PlayerMovement : MonoBehaviour
         Vector2 newPosition = characterBody.position + delta;
         characterBody.MovePosition(newPosition);
     }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.forward * 500);
+    }
 }

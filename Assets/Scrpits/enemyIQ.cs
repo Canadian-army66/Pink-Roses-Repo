@@ -9,11 +9,15 @@ public class EnemyWander : MonoBehaviour
     private float timer;
     private Vector2 moveDirection;
     public BoundrySetter bound;
+    private int brainDamage;
+    public bool playerIsClose;
+    private Animator mAnimator;
 
     void Start()
     {
         SetRandomDirection();
         timer = changeDirectionTime;
+        mAnimator.SetBool("isDead", false);
     }
 
     void Update()
@@ -26,6 +30,18 @@ public class EnemyWander : MonoBehaviour
         }
 
         Move();
+
+        if (Input.GetKeyDown(KeyCode.E) && playerIsClose && brainDamage < 10)
+        {
+            brainDamage++;
+            mAnimator.SetBool("Hurt", true);
+        }
+
+        if (brainDamage >= 20 && playerIsClose)
+        {
+            StopAllCoroutines();
+            mAnimator.SetBool("isDead", true);
+        }
     }
 
     void SetRandomDirection()
@@ -46,4 +62,20 @@ public class EnemyWander : MonoBehaviour
         position.y = Mathf.Clamp(position.y, bound.minY, bound.maxY);
         return position;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerIsClose = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerIsClose = false;
+        }
+    }
+
 }
