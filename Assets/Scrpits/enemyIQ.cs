@@ -17,6 +17,7 @@ public class EnemyWander : MonoBehaviour
     {
         SetRandomDirection();
         timer = changeDirectionTime;
+        mAnimator = GetComponent<Animator>();
         mAnimator.SetBool("isDead", false);
     }
 
@@ -34,10 +35,10 @@ public class EnemyWander : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose && brainDamage < 10)
         {
             brainDamage++;
-            mAnimator.SetBool("Hurt", true);
+            mAnimator.SetBool("isHurt", true);
         }
 
-        if (brainDamage >= 20 && playerIsClose)
+        if (brainDamage >= 10)
         {
             StopAllCoroutines();
             mAnimator.SetBool("isDead", true);
@@ -77,5 +78,4 @@ public class EnemyWander : MonoBehaviour
             playerIsClose = false;
         }
     }
-
 }
