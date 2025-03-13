@@ -37,6 +37,10 @@ public class EnemyWander : MonoBehaviour
             brainDamage++;
             mAnimator.SetBool("isHurt", true);
         }
+        else
+        {
+            mAnimator.SetBool("isHurt", false);
+        }
 
         if (brainDamage >= 10)
         {
