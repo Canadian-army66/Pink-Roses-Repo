@@ -7,7 +7,7 @@ public class EnemyWander : MonoBehaviour
     public float moveSpeed = 2f;
     public float changeDirectionTime = 2f;
     private float timer;
-    private Vector2 moveDirection;
+    public Vector2 moveDirection;
     public BoundrySetter bound;
     private int brainDamage;
     public bool playerIsClose;
@@ -20,7 +20,7 @@ public class EnemyWander : MonoBehaviour
         timer = changeDirectionTime;
         mAnimator = GetComponent<Animator>();
         mAnimator.SetBool("isDead", false);
-        Dead = false;
+        GameObject.FindWithTag("Enemy").tag = "Enemy";
     }
 
     void Update()
@@ -48,7 +48,7 @@ public class EnemyWander : MonoBehaviour
         {
             StopAllCoroutines();
             mAnimator.SetBool("isDead", true);
-            Dead = true;
+            GameObject.FindWithTag("Enemy").tag = "Dead";
         }
     }
 
@@ -76,6 +76,11 @@ public class EnemyWander : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = true;
+        }
+        if (other.CompareTag("wall"))
+        {
+            SetRandomDirection();
+            timer = changeDirectionTime;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
