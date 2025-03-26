@@ -9,13 +9,10 @@ public class AudioManager : MonoBehaviour
 {
 
     private static AudioManager instance;
-
     public AudioMixer masterMixer;
-
     public float soundLevel;
 
 
-    // public Slider MasterSlider, MusicSlider;
     public static AudioManager Instance { get { return instance; } }
 
     private void Awake()

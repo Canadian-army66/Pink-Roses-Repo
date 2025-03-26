@@ -12,6 +12,7 @@ public class EnemyWander : MonoBehaviour
     private int brainDamage;
     public bool playerIsClose;
     private Animator mAnimator;
+    public bool Dead;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class EnemyWander : MonoBehaviour
         timer = changeDirectionTime;
         mAnimator = GetComponent<Animator>();
         mAnimator.SetBool("isDead", false);
+        Dead = false;
     }
 
     void Update()
@@ -46,6 +48,7 @@ public class EnemyWander : MonoBehaviour
         {
             StopAllCoroutines();
             mAnimator.SetBool("isDead", true);
+            Dead = true;
         }
     }
 
