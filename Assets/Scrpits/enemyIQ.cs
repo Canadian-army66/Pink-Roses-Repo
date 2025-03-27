@@ -49,6 +49,7 @@ public class EnemyWander : MonoBehaviour
             StopAllCoroutines();
             mAnimator.SetBool("isDead", true);
             GameObject.FindWithTag("Enemy").tag = "Dead";
+            this.enabled = false;
         }
     }
 
@@ -80,7 +81,6 @@ public class EnemyWander : MonoBehaviour
         if (other.CompareTag("wall"))
         {
             SetRandomDirection();
-            timer = changeDirectionTime;
         }
     }
     private void OnTriggerExit2D(Collider2D other)

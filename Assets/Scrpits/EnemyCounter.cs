@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
 public class EnemyCounter : MonoBehaviour
 {
     public int enemyCount;
+    public TextMeshProUGUI dialogueText;
+
     void Update()
     {
         CountEnemies();
@@ -13,6 +17,7 @@ public class EnemyCounter : MonoBehaviour
     void CountEnemies()
     {
         int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        Debug.Log("Number of Enemies: " + enemyCount);
+        dialogueText.text = "Number of Enemies: " + enemyCount;
     }
+    
 }
