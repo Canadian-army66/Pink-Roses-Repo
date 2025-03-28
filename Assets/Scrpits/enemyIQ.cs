@@ -78,16 +78,19 @@ public class EnemyWander : MonoBehaviour
         {
             playerIsClose = true;
         }
-        if (other.CompareTag("wall"))
-        {
-            SetRandomDirection();
-        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("wall"))
+        {
+            SetRandomDirection();
         }
     }
 }
