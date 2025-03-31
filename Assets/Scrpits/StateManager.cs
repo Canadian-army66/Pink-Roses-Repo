@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
+    public bool theyGone;
     void Start()
     {
         var go = new GameObject { name = "StateManager" };
@@ -12,6 +13,6 @@ public class StateManager : MonoBehaviour
 
     void Update()
     {
-        
+       
     }
 }
