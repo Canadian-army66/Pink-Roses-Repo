@@ -21,6 +21,7 @@ public class EnemyWander : MonoBehaviour
         mAnimator = GetComponent<Animator>();
         mAnimator.SetBool("isDead", false);
         GameObject.FindWithTag("Enemy").tag = "Enemy";
+        bound = GameObject.FindWithTag("map").GetComponent<BoundrySetter>();
     }
 
     void Update()

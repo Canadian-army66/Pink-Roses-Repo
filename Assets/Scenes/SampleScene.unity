@@ -2614,7 +2614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f4399e0b170924cb1f361168882f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spawning: 0
+  Spawning: 1
   numberToSpawn: 2
   SpawningPrefab: {fileID: 3936699966329996264, guid: a3233c330e122514aa42c686f7e2ec4b, type: 3}
   bound: {fileID: 2123190355}
@@ -6825,7 +6825,7 @@ GameObject:
   - component: {fileID: 2123190355}
   m_Layer: 0
   m_Name: map
-  m_TagString: Untagged
+  m_TagString: map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

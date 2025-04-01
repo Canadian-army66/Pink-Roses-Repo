@@ -9,6 +9,8 @@ TagManager:
   - Slider
   - Enemy
   - Dead
+  - map
+  - spawnManager
   layers:
   - Default
   - TransparentFX

@@ -5,13 +5,12 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public bool Spawning = true;
-    public int numberToSpawn = 0;
+    public int numberToSpawn = 2;
     public GameObject SpawningPrefab;
     public BoundrySetter bound;
-    void Update()
+    void Start()
     {
         Spawner();
-        Spawning = false;
     }
 
     public void Spawner()
