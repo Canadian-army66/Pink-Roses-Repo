@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     public int numberToSpawn = 2;
     public GameObject SpawningPrefab;
     public BoundrySetter bound;
-    void Update()
+    void Start()
     {
         Spawner();
     }
@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
     {
         if (Spawning == true)
         {
-            for (int i = 0; i > numberToSpawn; i++)
+            for (int i = 0; i < numberToSpawn; i++)
             {
                 Vector2 spawnPos = RandomSpawn();
                 Instantiate(SpawningPrefab, spawnPos, Quaternion.identity);
