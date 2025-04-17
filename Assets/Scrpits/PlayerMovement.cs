@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 PreScale;
     public AudioClip kickSound;
     private AudioSource audioSource;
+    public InputAction controls;
     void Start()
     {
         velocity = new Vector2(speed, speed);
@@ -23,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = false;
         mAnimator = GetComponent<Animator>();
         audioSource = gameObject.AddComponent<AudioSource>();
+        controls = GetComponent<InputAction>();
+        
     }
 
     // Update is called once per frame

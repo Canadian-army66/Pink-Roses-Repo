@@ -6,15 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Town.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/grandad's room.unity
     guid: 6c8c343906b7c5b45a02ab5206372718
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/YourHouse.unity
     guid: 304510a9ec899204d8c67bb42e3262a0
   - enabled: 1
     path: Assets/Scenes/Seaside.unity
     guid: 66d57c6e5320c58468cc7830e158ba13
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: b44f88f68caf4014fa2bdb8126260827
   m_configObjects: {}
