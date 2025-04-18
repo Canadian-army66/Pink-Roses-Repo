@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseWorks : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool paused;
+    private float originalTimeScale;
+
+    public void Pause()
     {
-        
+        paused = true;
+
+        originalTimeScale = Time.timeScale;
+        Time.timeScale = 0f;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void notPaused()
     {
-        
+        paused = false;
+
+        Time.timeScale = originalTimeScale;
     }
+
 }
