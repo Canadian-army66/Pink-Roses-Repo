@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 PreScale;
     public AudioClip kickSound;
     private AudioSource audioSource;
+    public InputActionReference controller;
+    public InputActionReference kick;
     void Start()
     {
         velocity = new Vector2(speed, speed);
