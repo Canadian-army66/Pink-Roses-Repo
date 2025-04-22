@@ -1,30 +1,41 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
-    public GameObject objectToTransform; // Assign this via the Inspector
-    public Vector3 newPosition; // Desired position after collision
-    public Vector3 newScale; // Desired scale after collision
-    public Quaternion newRotation; // Desired rotation after collision
+    public GameObject objectToTransform;
+    public GameObject objectToDestroy;
+    public Vector3 newPosition;
+    public Vector3 newScale;
+    public Quaternion newRotation;
+    public int enemyCount;
 
-    private void OnCollisionEnter(Collision collision)
+    void Start()
     {
-        // Check if the colliding object has the "Player" tag
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            // Destroy this game object
-            Destroy(gameObject);
+        CountEnemies();
+    }
 
-            // Check if the objectToTransform is assigned
-            if (objectToTransform != null)
-            {
-                // Transform the object
-                objectToTransform.transform.position = newPosition;
-                objectToTransform.transform.localScale = newScale;
-                objectToTransform.transform.rotation = newRotation;
-            }
+    void Update()
+    {
+        Dead();
+    }
+    private void Dead()
+    {
+        if (enemyCount == 0)
+        {
+            Destroy(objectToDestroy);
+            objectToTransform.transform.position = newPosition;
+            objectToTransform.transform.localScale = newScale;
+            objectToTransform.transform.rotation = newRotation;
+            this.enabled = false;
         }
     }
+    void CountEnemies()
+    {
+        int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+    }
+
 }

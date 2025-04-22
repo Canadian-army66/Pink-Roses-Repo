@@ -13,7 +13,6 @@ public class Enemy3D : MonoBehaviour
         mAnimator = GetComponent<Animator>();
         mAnimator.SetBool("isDead", false);
         GameObject.FindWithTag("Enemy").tag = "Enemy";
-
     }
 
     
@@ -33,7 +32,7 @@ public class Enemy3D : MonoBehaviour
         {
             
             mAnimator.SetBool("isDead", true);
-            this.enabled = false;
+            GameObject.FindWithTag("Enemy").tag = "Dead";
         }
     }
     private void OnTriggerEnter(Collider other)
