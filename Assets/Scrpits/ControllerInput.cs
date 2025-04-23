@@ -8,36 +8,15 @@ public class ControllerInput : MonoBehaviour
 {
     public bool pluggedIn;
     public GameObject Player;
+    public PlayerInput controllerInput;
 
     void Start()
     {
-        if (pluggedIn == false)
-        {
-            this.enabled = false;
-        }
-        else
-        {
-            this.enabled = true;
-        }
+        controllerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
     {
         
-    }
-
-    void Plugged()
-    {
-        Gamepad gamepad = GetComponent<Gamepad>();
-        if (gamepad == null )
-        {
-            Debug.Log("No Controller Connected!");
-            pluggedIn = false;
-        }
-        else
-        {
-            Debug.Log("Controller Found!");
-            pluggedIn = false;
-        }
     }
 }

@@ -22,6 +22,7 @@ public class LevelMove : MonoBehaviour
     public void Change()
     {
         IsChanging = true;
+        Time.timeScale = 1f;
     }
     void Update()
     {

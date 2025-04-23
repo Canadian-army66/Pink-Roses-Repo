@@ -16,8 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 PreScale;
     public AudioClip kickSound;
     private AudioSource audioSource;
-    public InputActionReference controller;
-    public InputActionReference kick;
+    public bool isKicking;
     void Start()
     {
         velocity = new Vector2(speed, speed);
@@ -31,10 +30,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inputMovement = new Vector2(
-            Input.GetAxisRaw("Horizontal"),
-            Input.GetAxisRaw("Vertical")
-            );
         if (transform.position.y < bound.minY)
         {
             transform.position = new Vector3(transform.position.x, bound.minY, 0);
@@ -54,21 +49,21 @@ public class PlayerMovement : MonoBehaviour
 
         if (mAnimator != null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (isKicking)
             {
                 audioSource.Play();
                 mAnimator.SetTrigger("ToKick");
             }
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W))
+            if (inputMovement.y != 0)
             {
                 mAnimator.SetTrigger("ToWalk");
             }
-            if (Input.GetKey(KeyCode.D))
+            if (inputMovement.x > 0)
             {
                 mAnimator.SetTrigger("ToWalk");
                 transform.localScale = PreScale;
             }
-            if (Input.GetKey(KeyCode.A))
+            if (inputMovement.x < 0)
             {
                 mAnimator.SetTrigger("ToWalk");
                 transform.localScale = PostScale;
@@ -89,5 +84,14 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.forward * 500);
+    }
+
+    public void OnKick(InputValue value)
+    {
+        isKicking = value.isPressed;
+    }
+    public void OnMove(InputValue inputValue)
+    {
+        inputMovement = inputValue.Get<Vector2>();
     }
 }

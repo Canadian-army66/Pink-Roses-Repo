@@ -13,6 +13,7 @@ public class EnemyWander : MonoBehaviour
     public bool playerIsClose;
     private Animator mAnimator;
     public bool Dead;
+    private PlayerMovement playerMovement;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class EnemyWander : MonoBehaviour
         mAnimator.SetBool("isDead", false);
         GameObject.FindWithTag("Enemy").tag = "Enemy";
         bound = GameObject.FindWithTag("map").GetComponent<BoundrySetter>();
+        playerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     void Update()
@@ -35,7 +37,7 @@ public class EnemyWander : MonoBehaviour
 
         Move();
 
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose && brainDamage < 10)
+        if (playerMovement.isKicking && playerIsClose && brainDamage < 10)
         {
             brainDamage++;
             mAnimator.SetBool("isHurt", true);

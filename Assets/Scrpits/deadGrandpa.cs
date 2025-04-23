@@ -11,31 +11,13 @@ public class CollisionHandler : MonoBehaviour
     public Vector3 newPosition;
     public Vector3 newScale;
     public Quaternion newRotation;
-    public int enemyCount;
 
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        CountEnemies();
-    }
-
-    void Update()
-    {
-        Dead();
-    }
-    private void Dead()
-    {
-        if (enemyCount == 0)
-        {
             Destroy(objectToDestroy);
+            Destroy(this.gameObject);
             objectToTransform.transform.position = newPosition;
             objectToTransform.transform.localScale = newScale;
             objectToTransform.transform.rotation = newRotation;
-            this.enabled = false;
-        }
     }
-    void CountEnemies()
-    {
-        int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-    }
-
 }
