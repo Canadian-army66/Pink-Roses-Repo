@@ -38,4 +38,5 @@ public class MenuManager : MonoBehaviour
             AudioManager.Instance.ChangeMusicVol(soundLevel);
         }
     }
+
 }
