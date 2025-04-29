@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Enemy3D : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Enemy3D : MonoBehaviour
     public bool playerIsClose;
     private Animator mAnimator;
     public bool Dead;
+    public movement edMovement;
     void Start()
     {
         mAnimator = GetComponent<Animator>();
@@ -18,7 +20,7 @@ public class Enemy3D : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose && brainDamage < 10)
+        if (edMovement.isKicking && playerIsClose && brainDamage < 10)
         {
             brainDamage++;
             mAnimator.SetBool("isHurt", true);
@@ -32,7 +34,7 @@ public class Enemy3D : MonoBehaviour
         {
             
             mAnimator.SetBool("isDead", true);
-            GameObject.FindWithTag("Enemy").tag = "Dead";
+            gameObject.tag = "Dead";
         }
     }
     private void OnTriggerEnter(Collider other)
