@@ -4866,7 +4866,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1419448288}
-  - component: {fileID: 1419448287}
   m_Layer: 0
   m_Name: == clouds == (1)
   m_TagString: Untagged
@@ -4874,22 +4873,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1419448287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419448286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad4076c0a06ac0d449e882b380000100, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bob: {fileID: 1419448286}
-  moveOffScreenSpeed: 5
-  destroyDelay: 3
-  startCode: {fileID: 1419448287}
 --- !u!4 &1419448288
 Transform:
   m_ObjectHideFlags: 0

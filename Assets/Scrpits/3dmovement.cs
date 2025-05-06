@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class controls : MonoBehaviour
+public class Edmovement : MonoBehaviour
 {
     public float sensX;
     public float sensY;
@@ -67,6 +67,10 @@ public class controls : MonoBehaviour
 
     public void LookInput(Vector2 input)
     {
-        lookAround = input.normalized;
+        lookAround = input;
+    }
+    public void KickInput(bool input)
+    {
+        isKicking = input;
     }
 }

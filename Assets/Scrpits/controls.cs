@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static UnityEngine.Tilemaps.Tilemap;
 
 public class Controls : MonoBehaviour
@@ -30,7 +31,6 @@ public class Controls : MonoBehaviour
     private void Update()
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-        MyInput();
         if (grounded)
             rb.drag = groundDrag;
         else
@@ -41,16 +41,20 @@ public class Controls : MonoBehaviour
     {
         MovePlayer();
     }
-    private void MyInput()
-    {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-    }
 
     private void MovePlayer()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
     }
-
+    public void OnMove(InputValue inputValue)
+    {
+        horizontalInput = inputValue.Get<Vector2>().x;
+        verticalInput = inputValue.Get<Vector2>().y;
+    }
+    public void MoveInput(Vector2 input)
+    {
+        horizontalInput = input.normalized.x;
+        verticalInput = input.normalized.y;
+    }
 }
