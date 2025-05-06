@@ -9,7 +9,7 @@ public class Enemy3D : MonoBehaviour
     public bool playerIsClose;
     private Animator mAnimator;
     public bool Dead;
-    public movement edMovement;
+    public controls edMovement;
     void Start()
     {
         mAnimator = GetComponent<Animator>();

@@ -94,4 +94,13 @@ public class PlayerMovement : MonoBehaviour
     {
         inputMovement = inputValue.Get<Vector2>();
     }
+    public void MoveInput(Vector2 input)
+    {
+        inputMovement = input.normalized;
+    }
+
+    public void KickInput(bool input)
+    {
+        isKicking = input;
+    }
 }

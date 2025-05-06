@@ -2595,9 +2595,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1663187150, guid: 2f7f3dde7ae722a4aafffe20691ad702, type: 3}
+      propertyPath: playerMove
+      value: 
+      objectReference: {fileID: 2892583027879510887}
+    - target: {fileID: 1663187150, guid: 2f7f3dde7ae722a4aafffe20691ad702, type: 3}
       propertyPath: starterAssetsInputs
       value: 
-      objectReference: {fileID: 2892583027879510886}
+      objectReference: {fileID: 0}
     - target: {fileID: 597308369130767402, guid: 2f7f3dde7ae722a4aafffe20691ad702, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8439,6 +8443,17 @@ MonoBehaviour:
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
+--- !u!114 &2892583027879510887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2885257848458236581, guid: 7bf37ea8e1a856f419e684831ed5509a, type: 3}
+  m_PrefabInstance: {fileID: 2892583027879510878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2892583027879510879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a07954a4d65b49439048079d3705774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

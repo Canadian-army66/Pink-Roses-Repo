@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class movement : MonoBehaviour
+public class controls : MonoBehaviour
 {
     public float sensX;
     public float sensY;
@@ -63,5 +63,10 @@ public class movement : MonoBehaviour
     public void OnKick(InputValue value)
     {
         isKicking = value.isPressed;
+    }
+
+    public void LookInput(Vector2 input)
+    {
+        lookAround = input.normalized;
     }
 }
