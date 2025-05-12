@@ -244,10 +244,10 @@
                 {
                     "name": "",
                     "id": "64405034-4fa8-4f6d-959f-087a647da8eb",
-                    "path": "<Keyboard>/p",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
