@@ -31,9 +31,9 @@ public class Controls : MonoBehaviour
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         if (grounded)
-            rb.drag = groundDrag;
+            rb.linearDamping = groundDrag;
         else
-            rb.drag = 0;
+            rb.linearDamping = 0;
     }
 
     private void FixedUpdate()
