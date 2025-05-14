@@ -166,7 +166,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.GCTC.PinkRoses
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -175,7 +176,7 @@ PlayerSettings:
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 23
-  AndroidTargetSdkVersion: 0
+  AndroidTargetSdkVersion: 36
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
@@ -264,11 +265,11 @@ PlayerSettings:
   useCustomGradlePropertiesTemplate: 0
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
-  AndroidTargetArchitectures: 1
+  AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: '{inproject}: Keystores/user.keystore'
+  AndroidKeyaliasName: ieatbabies
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidEnableArm64MTE: 0
   AndroidBuildApkPerCpuArchitecture: 0
@@ -277,7 +278,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 0
+  androidUseCustomKeystore: 1
   m_AndroidBanners:
   - width: 320
     height: 180
@@ -790,16 +791,24 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Pink Roses
-  metroPackageVersion: 
-  metroCertificatePath: 
+  metroPackageName: PinkRoses
+  metroPackageVersion: 1.0.0.0
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: GCTC
+  metroCertificateIssuer: GCTC
+  metroCertificateNotAfter: 801a6cc6ede3dc01
   metroApplicationDescription: Pink Roses
-  wsaImages: {}
-  metroTileShortName: 
+  wsaImages:
+    65636: Assets/characters/Phillis/50_phillisIcon.png
+    131272: Assets/sprites/GCTC Logo_RGB_Stacked_Smol.png
+    2031640: Assets/characters/Phillis/24_phillisIcon.png
+    2031816: Assets/characters/Phillis/88_phillisIcon.png
+    2097352: Assets/characters/Phillis/142_phillisIcon.png
+    2162888: Assets/characters/Phillis/300_phillisIcon.png
+    2228424: Assets/characters/Phillis/620_phillisIcon.png
+    2293960: Assets/characters/Phillis/620x300_phillisIcon.png
+  metroTileShortName: Pink Roses
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -867,7 +876,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 2
+  activeInputHandler: 1
   windowsGamepadBackendHint: 0
   cloudProjectId: 3007ac23-154a-4fb6-a8a0-6602bab61e39
   framebufferDepthMemorylessMode: 0
